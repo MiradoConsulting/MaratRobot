@@ -9,6 +9,8 @@ import java.awt.Color;
  */
 public class MaratRobot extends Robot
 {
+	private boolean shoot = false;
+
 	/**
 	 * run: MaratRobot's default behavior
 	 */
@@ -24,7 +26,15 @@ public class MaratRobot extends Robot
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
 			ahead(100);
-			turnGunRight(90);
+
+			if (shoot) {
+				shoot = false;
+				turnGunLeft(30);
+				fire(1);
+				turnGunRight(30);
+			} else {
+				turnGunRight(90);
+			}
 		}
 	}
 
@@ -34,6 +44,7 @@ public class MaratRobot extends Robot
 	public void onScannedRobot(ScannedRobotEvent e) {
 		// Replace the next line with any behavior you would like
 		fire(3);
+		shoot = true;
 	}
 
 	/**
@@ -41,8 +52,8 @@ public class MaratRobot extends Robot
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
-		ahead(20);
-		turnLeft(240);
+		ahead(50);
+		turnLeft(45);
 		ahead(50);
 	}
 
