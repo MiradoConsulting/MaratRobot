@@ -1,4 +1,3 @@
-package maratmirado;
 import robocode.*;
 import java.awt.Color;
 
@@ -18,7 +17,7 @@ public class MaratRobot extends Robot
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
-		setColors(Color.red,Color.red,Color.red); // body,gun,radar
+		setColors(Color.black, Color.black, Color.black); // body,gun,radar
 
 		// Robot main loop
 		while(true) {
@@ -41,6 +40,7 @@ public class MaratRobot extends Robot
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
+		ahead(20);
 		turnLeft(240);
 		ahead(50);
 	}
