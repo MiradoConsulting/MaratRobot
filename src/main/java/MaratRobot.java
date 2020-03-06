@@ -24,9 +24,7 @@ public class MaratRobot extends Robot
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
 			ahead(100);
-			turnGunRight(360);
-			back(100);
-			turnGunRight(360);
+			turnGunRight(90);
 		}
 	}
 
@@ -43,14 +41,15 @@ public class MaratRobot extends Robot
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
-		back(10);
+		ahead(50);
+		turnRight(60);
 	}
-	
+
 	/**
 	 * onHitWall: What to do when you hit a wall
 	 */
 	public void onHitWall(HitWallEvent e) {
 		// Replace the next line with any behavior you would like
-		back(20);
-	}	
+		turnRight(60);
+	}
 }
