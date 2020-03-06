@@ -1,3 +1,4 @@
+package maratmirado;
 import robocode.*;
 import java.awt.Color;
 
